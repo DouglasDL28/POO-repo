@@ -1,3 +1,13 @@
+import modulo.*
+
 fun main(args: Array<String>) {
-    println("Hello World")
+
+val mi_radio = Radio (
+     volumen = 100
+)
+
+    println(mi_radio)
+
 }
+
+
