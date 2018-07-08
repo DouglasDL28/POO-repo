@@ -1,9 +1,13 @@
 package modulo
 
+import javax.swing.FocusManager
+
 class Radio (
       var encendido: Boolean = false,
-      val volumen: Int,
-      val estacion: Int = 100
+      var volumen: Int = 50,
+      var estacion: Int = 100,
+      var banda: String = "FM"
+
 ) {
     fun encender() {
         encendido = true
@@ -13,7 +17,21 @@ class Radio (
         encendido = false
     }
 
-    fun subirEstacion (){ }
+    fun cambiar_AM () {
+        banda = "AM"
+    }
+
+    fun cambiar_FM () {
+        banda = "FM"
+    }
+
+    fun subir_volumen (cambio_vol: Int) {volumen = volumen + cambio_vol}
+
+    fun bajar_volumen (cambio_vol: Int) {volumen = volumen - cambio_vol}
+
+    fun subirEstacion (cambio_estacion: Int){estacion = estacion + cambio_estacion}
+
+    fun bajarEstacion (cambio_estacion: Int) {estacion = estacion - cambio_estacion}
 
     override fun toString(): String {
         return """
