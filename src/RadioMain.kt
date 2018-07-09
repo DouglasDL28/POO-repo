@@ -1,25 +1,31 @@
 import modulo.*
 
 fun main(args: Array<String>) {
-    val mi_radio = Radio ()
+    val mi_radio = Radio()
 
     println("Desea encender el radio?")
-    var encender: String? = readLine()!!
+    val encender: String? = readLine()!!
     if (encender == "Si" || encender == "si") {
         mi_radio.encender()
 
-        println("""Que desea hacer? (seleccione un número)
+
+
+
+        do {
+            //MENU de encendido.
+            println("""MENÚ:
             |   1.Cambiar volumen (Su volumen actual es ${mi_radio.volumen}).
             |   2. Cambiar banda (AM/FM) (Esta en la banda ${mi_radio.banda}).
             |   3. Cambiar de estación (su estacion actual es ${mi_radio.estacion}).
             |   4.Apagar.
             |   5. Salir.
+            |
+            |   Que desea hacer? (seleccione un número)
         """.trimMargin())
 
-        val menu = readLine()!!.toInt()
+            val menu = readLine()!!.toInt()
 
-        while (menu != 5){
-            // Cambiar el volumen
+            // Cambiar el volumen.
             if (menu == 1) {
                 println("Desea subir o bajar el volumen?")
                 val subirObajar = readLine()!!
@@ -42,20 +48,20 @@ fun main(args: Array<String>) {
 
             }
 
-            if (menu == 2)
-
-        }
-
+            //Cambiar banda.
+            if (menu == 2){
+                println("Desea cambiar a banda AM o FM?")
+                val banda = readLine()!!
+                when (banda){
+                    "AM","am" -> mi_radio.cambiar_AM()
+                    "FM","fm" -> mi_radio.cambiar_FM()
+                }
+            }
+        } while (menu != 5)
         println(mi_radio)
-
-
     }
-
-
-
-
-
-
 }
+
+
 
 
