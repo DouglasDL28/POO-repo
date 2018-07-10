@@ -57,6 +57,36 @@ fun main(args: Array<String>) {
                     "FM","fm" -> mi_radio.cambiar_FM()
                 }
             }
+
+            //Cambiar de estación
+            if (menu == 3){
+                println("Desea subir o bajar de estacion?")
+                val OnOff = readLine()!!
+                when (OnOff) {
+                    // subir de estación.
+                    "Subir", "subir" -> {
+                        println("Cuánto desea subir?")
+                        val cambio_estacion = readLine()!!.toDouble()
+                        mi_radio.subirEstacion(cambio_estacion)
+                        println("Estación: ${mi_radio.estacion}")
+                    }
+
+                    // Bajar de estación.
+                    "Bajar","bajar" -> {
+                        println("Cuánto desea bajar?")
+                        val cambio_estacion = readLine()!!.toDouble()
+                        mi_radio.subirEstacion(cambio_estacion)
+                        println("Estación: ${mi_radio.estacion}")
+                    }
+                }
+            }
+
+            //Apagar
+            if (menu == 4){
+                println("APAGANDO...")
+                mi_radio.apagar()
+            }
+
         } while (menu != 5)
         println(mi_radio)
     }

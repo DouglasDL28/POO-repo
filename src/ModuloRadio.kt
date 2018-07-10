@@ -5,7 +5,7 @@ import javax.swing.FocusManager
 class Radio (
       var encendido: Boolean = false,
       var volumen: Int = 50,
-      var estacion: Int = 100,
+      var estacion: Double = 100.0,
       var banda: String = "FM"
 
 ) {
@@ -29,9 +29,9 @@ class Radio (
 
     fun bajar_volumen (cambio_vol: Int) {volumen = volumen - cambio_vol}
 
-    fun subirEstacion (cambio_estacion: Int){estacion = estacion + cambio_estacion}
+    fun subirEstacion (cambio_estacion: Double){estacion = estacion + cambio_estacion}
 
-    fun bajarEstacion (cambio_estacion: Int) {estacion = estacion - cambio_estacion}
+    fun bajarEstacion (cambio_estacion: Double) {estacion = estacion - cambio_estacion}
 
     override fun toString(): String {
         return """
